@@ -1,0 +1,19 @@
+body {
+    font-family: system-ui, sans-serif;
+    margin: 40px auto;
+    max-width: 760px;
+    color: #1c2b24;
+}
+
+h1 { font-size: 22px; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid #ddd; }
+
+.ok { color: #2f7d46; font-weight: 600; }
+.erro { color: #b3261e; }
+
+.aviso { background: #e7f3e9; padding: 10px; border-radius: 6px; }
+
+form label { display: block; margin: 14px 0; }
+input { display: block; margin-top: 4px; padding: 6px; width: 100%; }
