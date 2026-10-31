@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Alunos</title>
+</head>
+<body>
+  <h1>Alunos cadastrados</h1>
+
+  <p th:if="${mensagem}" th:text="${mensagem}"></p>
+
+  <a th:href="@{/alunos/novo}">Novo aluno</a>
+
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>E-mail</th>
+      <th>Nota</th>
+      <th>Situacao</th>
+      <th></th>
+    </tr>
+    <tr th:each="aluno : ${alunos}">
+      <td th:text="${aluno.nome}">Fulano</td>
+      <td th:text="${aluno.email}">fulano@escola.com</td>
+      <td th:text="${aluno.nota}">8.5</td>
+      <td th:text="${aluno.situacao}">Aprovado</td>
+      <td>
+        <form th:action="@{/alunos/{id}/excluir(id=${aluno.id})}" method="post">
+          <button type="submit">Excluir</button>
+        </form>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
