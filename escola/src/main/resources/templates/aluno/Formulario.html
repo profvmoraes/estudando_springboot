@@ -7,10 +7,12 @@
   <label>E-mail
     <input type="email" th:field="*{email}">
   </label>
+  <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
 
   <label>Nota
     <input type="number" step="0.1" th:field="*{nota}">
   </label>
+  <p th:if="${#fields.hasErrors('nota')}" th:errors="*{nota}"></p>
 
   <button type="submit">Salvar</button>
 </form>

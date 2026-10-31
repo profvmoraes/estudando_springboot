@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-@RequestMapping("/aluno")
+@RequestMapping("/alunos")
 public class AlunoController {
 
     private final AlunoService service;
@@ -21,14 +21,14 @@ public class AlunoController {
 
     @GetMapping
     public String listar(Model model) {
-        model.addAttribute("aluno", service.listar());
-        return "Lista";
+        model.addAttribute("alunos", service.listar());
+        return "aluno/Lista";
     }
 
     @GetMapping("/novo")
     public String formulario(Model model) {
         model.addAttribute("aluno", new Aluno());
-        return "Formulario";
+        return "aluno/Formulario";
     }
 
     @PostMapping
@@ -37,7 +37,7 @@ public class AlunoController {
                          RedirectAttributes redirect) {
 
         if (resultado.hasErrors()) {
-            return "Formulario";
+            return "aluno/Formulario";
         }
         service.salvar(aluno);
         redirect.addFlashAttribute("mensagem", "Aluno salvo com sucesso!");
