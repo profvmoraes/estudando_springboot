@@ -22,13 +22,13 @@ public class AlunoController {
     @GetMapping
     public String listar(Model model) {
         model.addAttribute("alunos", service.listar());
-        return "aluno/Lista";
+        return "alunos/lista";
     }
 
     @GetMapping("/novo")
     public String formulario(Model model) {
         model.addAttribute("aluno", new Aluno());
-        return "aluno/Formulario";
+        return "alunos/formulario";
     }
 
     @PostMapping
@@ -37,7 +37,7 @@ public class AlunoController {
                          RedirectAttributes redirect) {
 
         if (resultado.hasErrors()) {
-            return "aluno/Formulario";
+            return "alunos/formulario";
         }
         service.salvar(aluno);
         redirect.addFlashAttribute("mensagem", "Aluno salvo com sucesso!");

@@ -1,0 +1,7 @@
+POST http://localhost:8080/api/cursos/1/alunos
+Content-Type: application/json
+
+{
+  "nome": "Joao",
+  "email": "joao@escola.com"
+}

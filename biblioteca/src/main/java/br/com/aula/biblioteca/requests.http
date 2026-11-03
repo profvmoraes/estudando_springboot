@@ -1,0 +1,39 @@
+### Listar todos
+GET http://localhost:8080/api/livros
+
+### Filtrar por autor
+GET http://localhost:8080/api/livros?autor=machado
+
+### Buscar por id
+GET http://localhost:8080/api/livros/1
+
+### Cadastrar
+POST http://localhost:8080/api/livros
+Content-Type: application/json
+
+{
+  "titulo": "Memorias Postumas",
+  "autor": "Machado de Assis",
+  "anoPublicacao": 1881
+}
+
+### Dados invalidos (espera 400)
+
+
+POST http://localhost:8080/api/livros
+Content-Type: application/json
+
+{
+  "titulo": "",
+  "autor": "Autor",
+  "anoPublicacao": 3000
+}
+
+### Emprestar
+PATCH http://localhost:8080/api/livros/1/emprestimo
+
+### Emprestar de novo (espera 409)
+PATCH http://localhost:8080/api/livros/1/emprestimo
+
+### Remover
+DELETE http://localhost:8080/api/livros/1

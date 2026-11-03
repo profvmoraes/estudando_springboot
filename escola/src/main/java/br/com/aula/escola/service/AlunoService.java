@@ -2,11 +2,10 @@ package br.com.aula.escola.service;
 
 import br.com.aula.escola.model.Aluno;
 import br.com.aula.escola.repository.AlunoRepository;
-import jakarta.transaction.Transactional;
+import java.util.List;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AlunoService {

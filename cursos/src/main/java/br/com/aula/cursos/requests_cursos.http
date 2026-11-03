@@ -1,0 +1,7 @@
+POST http://localhost:8080/api/cursos
+Content-Type: application/json
+
+{
+  "nome": "Java Total",
+  "cargaHoraria": 60
+}

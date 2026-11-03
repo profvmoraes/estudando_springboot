@@ -26,18 +26,16 @@ public class Aluno {
     @Column(nullable = false)
     private Double nota;
 
-    //Construtores
     public Aluno() {
     }
 
-    public Aluno(Long id, String nome, String email, Double nota) {
-        this.id = id;
+    public Aluno(String nome, String email, Double nota) {
         this.nome = nome;
         this.email = email;
         this.nota = nota;
     }
 
-    // Calculado em memória: não vira coluna no banco de dados
+    // Calculado em memoria: nao vira coluna no banco
     @Transient
     public boolean isAprovado() {
         return nota != null && nota >= 7.0;
@@ -48,17 +46,11 @@ public class Aluno {
         return isAprovado() ? "Aprovado" : "Reprovado";
     }
 
-    // Getters e Setters de cada entidade do banco
     public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
-
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-
     public Double getNota() { return nota; }
     public void setNota(Double nota) { this.nota = nota; }
-
 }
